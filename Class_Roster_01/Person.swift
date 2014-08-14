@@ -22,9 +22,9 @@ class Person : NSObject{
     
     }
     
-    func fullName (firstName: String, lastName: String) -> String{
+    func fullName () -> String{
     
-        return (firstName + " " + lastName)
+        return (self.firstName + " " + self.lastName)
     
     }
 
