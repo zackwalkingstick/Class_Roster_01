@@ -55,8 +55,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("studentCell", forIndexPath: indexPath) as UITableViewCell
-        
-        cell.textLabel.text = classRoster[indexPath.row].fullName()
+        var studentForRow : Person = classRoster[indexPath.row] as Person
+        cell.textLabel.text = studentForRow.fullName()
         
         return cell
     }
