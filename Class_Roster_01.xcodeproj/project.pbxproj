@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6C1E8D171999AA6600B17250 /* Roster_Dictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C1E8D161999AA6600B17250 /* Roster_Dictionary.plist */; };
-		6CACD7FC1996B6C900D3EE69 /* Roster.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CACD7FB1996B6C900D3EE69 /* Roster.plist */; };
+		6C8903A419A1591E00362B1D /* Teachers_Dictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C8903A319A1591E00362B1D /* Teachers_Dictionary.plist */; };
+		6CC18919199C5800005EDB46 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC18918199C5800005EDB46 /* DetailViewController.swift */; };
 		6CDC6E3E1996A743004AF08E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDC6E3D1996A743004AF08E /* AppDelegate.swift */; };
 		6CDC6E401996A743004AF08E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDC6E3F1996A743004AF08E /* ViewController.swift */; };
 		6CDC6E431996A743004AF08E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CDC6E411996A743004AF08E /* Main.storyboard */; };
@@ -29,7 +30,8 @@
 
 /* Begin PBXFileReference section */
 		6C1E8D161999AA6600B17250 /* Roster_Dictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Roster_Dictionary.plist; sourceTree = "<group>"; };
-		6CACD7FB1996B6C900D3EE69 /* Roster.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Roster.plist; sourceTree = "<group>"; };
+		6C8903A319A1591E00362B1D /* Teachers_Dictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Teachers_Dictionary.plist; sourceTree = "<group>"; };
+		6CC18918199C5800005EDB46 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6CDC6E381996A742004AF08E /* Class_Roster_01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Class_Roster_01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CDC6E3C1996A743004AF08E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CDC6E3D1996A743004AF08E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				6CDC6E5C1996A867004AF08E /* Person.swift */,
 				6CDC6E3D1996A743004AF08E /* AppDelegate.swift */,
 				6CDC6E3F1996A743004AF08E /* ViewController.swift */,
+				6CC18918199C5800005EDB46 /* DetailViewController.swift */,
 				6CDC6E411996A743004AF08E /* Main.storyboard */,
 				6CDC6E441996A743004AF08E /* Images.xcassets */,
 				6CDC6E3B1996A743004AF08E /* Supporting Files */,
@@ -95,8 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				6CDC6E3C1996A743004AF08E /* Info.plist */,
-				6CACD7FB1996B6C900D3EE69 /* Roster.plist */,
 				6C1E8D161999AA6600B17250 /* Roster_Dictionary.plist */,
+				6C8903A319A1591E00362B1D /* Teachers_Dictionary.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -200,8 +203,8 @@
 			files = (
 				6CDC6E431996A743004AF08E /* Main.storyboard in Resources */,
 				6C1E8D171999AA6600B17250 /* Roster_Dictionary.plist in Resources */,
-				6CACD7FC1996B6C900D3EE69 /* Roster.plist in Resources */,
 				6CDC6E451996A743004AF08E /* Images.xcassets in Resources */,
+				6C8903A419A1591E00362B1D /* Teachers_Dictionary.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +225,7 @@
 				6CDC6E5D1996A867004AF08E /* Person.swift in Sources */,
 				6CDC6E401996A743004AF08E /* ViewController.swift in Sources */,
 				6CDC6E3E1996A743004AF08E /* AppDelegate.swift in Sources */,
+				6CC18919199C5800005EDB46 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

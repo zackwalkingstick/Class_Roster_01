@@ -8,56 +8,69 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var studentsTableViewController: UITableView!
-    var classRoster : NSMutableArray = []
+    @IBOutlet weak var addPerson: UIBarButtonItem!
     
     
-    override func viewDidLoad() {
+    var classRoster = Person.loadPlist("Roster_Dictionary")
+    var teachers = Person.loadPlist("Teachers_Dictionary")
+    var studentAndTeachers = [String: AnyObject]()
+    
+    
+    func studentAndTeacherDictionary()
+    {
+        self.studentAndTeachers["Teachers"] = self.teachers
+        self.studentAndTeachers["Students"] = self.classRoster
+    }
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         self.studentsTableViewController.dataSource = self
         self.studentsTableViewController.delegate = self
-        
-        
-       /*------Creating Roster List from plist---------*/
-        
-        let path = NSBundle.mainBundle().pathForResource("Roster", ofType: "plist")
-        let readStudentNames = NSMutableArray(contentsOfFile: path)
-    
-        
-        for name in readStudentNames
-        {
-            var student = name.componentsSeparatedByString(",")
-            var studentName = Person(firstName: "\(student[0])", lastName: "\(student[1])")
-            self.classRoster.addObject(studentName)
-        }
-        
-        /*---------------------------------------------*/
- 
-            
-        }
+        studentAndTeacherDictionary()
+    }
     
     
-    func numberOfSectionsInTableView(tableView: UITableView) ->Int
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        return 1
+        return self.studentAndTeachers.count
     }
     
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int)-> Int
     {
-        return self.classRoster.count
+        if (section == 0){
+            return self.classRoster.count}
+        else{
+            return self.teachers.count
+        }
+    }
+    
+    
+    func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String{
+        if (section == 0){
+            return "Students"
+        }
+        else{
+            return "Teachers"}
     }
     
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("studentCell", forIndexPath: indexPath) as UITableViewCell
-        var studentForRow : Person = classRoster[indexPath.row] as Person
-        cell.textLabel.text = studentForRow.fullName()
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
+        if (indexPath.section == 0){
+            var studentForRow : Person = classRoster[indexPath.row] as Person
+            cell.textLabel.text = studentForRow.fullName()}
+        else{
+            var teacherForRow : Person = teachers[indexPath.row] as Person
+            cell.textLabel.text = teacherForRow.fullName()
+            }
         return cell
     }
     
@@ -68,21 +81,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    override func viewDidAppear(animated: Bool)
+    override func viewWillAppear(animated: Bool)
     {
         self.studentsTableViewController.reloadData()
     }
-    
-    
-    override func viewWillAppear(animated: Bool) {
-        
-        self.studentsTableViewController.reloadData()
-        
-    }
 
-    override func didReceiveMemoryWarning() {
+    
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!)
+    {
+        if segue.identifier == "Show Person" {
+        
+            var detailViewController = segue.destinationViewController as DetailViewController
+            
+            var selectedIndexPath = self.studentsTableViewController.indexPathForSelectedRow()
+            
+            var selectedPerson: AnyObject! = self.classRoster[selectedIndexPath.row]
+            
+            detailViewController.person = selectedPerson as Person
+            
+        }
+        
     }
 
 
