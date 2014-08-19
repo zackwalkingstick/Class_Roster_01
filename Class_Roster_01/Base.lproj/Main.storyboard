@@ -50,7 +50,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="BVm-2G-IOe">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="vCJ-6L-wD4"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="vCJ-6L-wD4">
+                            <connections>
+                                <segue destination="zSf-D4-4Vi" kind="presentation" identifier="Add Person" id="utR-ZD-kH1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addPerson" destination="vCJ-6L-wD4" id="OkA-9V-t3y"/>
@@ -122,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaE-uW-o0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="150"/>
+            <point key="canvasLocation" x="1032" y="435.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g3Q-MJ-Ojq">
@@ -141,6 +145,126 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGh-er-u6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="273" y="-557"/>
+        </scene>
+        <!--AddPersonViewController-->
+        <scene sceneID="ItU-KK-x9d">
+            <objects>
+                <viewController title="AddPersonViewController" id="zSf-D4-4Vi" customClass="AddPersonViewController" customModule="Class_Roster_01" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NSs-3e-n7Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="RRc-0H-yA0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jS3-PB-xqL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2R-rn-HOl">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="58" width="287" height="21"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f0e-EA-ygz">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="87" width="287" height="30"/>
+                                </variation>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbn-2y-ETN">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="135" width="287" height="21"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9o1-Cf-c93">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="164" width="287" height="30"/>
+                                </variation>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ycC-iE-eaT">
+                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                                <segments>
+                                    <segment title="Student"/>
+                                    <segment title="Teacher"/>
+                                </segments>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="18" y="223" width="125" height="29"/>
+                                </variation>
+                                <connections>
+                                    <action selector="studentTeacherSegmentedControl:" destination="zSf-D4-4Vi" eventType="valueChanged" id="XrY-31-YMn"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAy-QK-LAu">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.031372550870000002" green="0.41960787770000002" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="18" y="287" width="285" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="zSf-D4-4Vi" eventType="touchUpInside" id="6EC-7V-f9K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fki-mO-BSh">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="255" y="20" width="48" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="jTb-eD-ldL" kind="unwind" unwindAction="unwindToList:" id="lfn-DK-2zk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="m2R-rn-HOl"/>
+                                <exclude reference="f0e-EA-ygz"/>
+                                <exclude reference="fbn-2y-ETN"/>
+                                <exclude reference="9o1-Cf-c93"/>
+                                <exclude reference="ycC-iE-eaT"/>
+                                <exclude reference="rAy-QK-LAu"/>
+                                <exclude reference="fki-mO-BSh"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="m2R-rn-HOl"/>
+                                <include reference="f0e-EA-ygz"/>
+                                <include reference="fbn-2y-ETN"/>
+                                <include reference="9o1-Cf-c93"/>
+                                <include reference="ycC-iE-eaT"/>
+                                <include reference="rAy-QK-LAu"/>
+                                <include reference="fki-mO-BSh"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="firstNameTextField" destination="f0e-EA-ygz" id="9bI-QM-xnN"/>
+                        <outlet property="lastNameTextField" destination="9o1-Cf-c93" id="pLU-bl-H8O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ycS-qv-c9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jTb-eD-ldL" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1035" y="-205.5"/>
         </scene>
     </scenes>
 </document>

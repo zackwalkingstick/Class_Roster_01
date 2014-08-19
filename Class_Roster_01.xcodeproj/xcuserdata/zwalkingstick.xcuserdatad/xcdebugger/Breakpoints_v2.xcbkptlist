@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class_Roster_01/ViewController.swift"
-            timestampString = "430012487.143389"
+            timestampString = "430106212.646652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "numberOfSectionsInTableView(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class_Roster_01/ViewController.swift"
-            timestampString = "430091361.62211"
+            timestampString = "430106212.646652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -72,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class_Roster_01/ViewController.swift"
-            timestampString = "430012355.094579"
+            timestampString = "430106212.646652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -88,13 +88,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class_Roster_01/ViewController.swift"
-            timestampString = "430083820.630677"
+            timestampString = "430106212.646652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "tableView(_:titleForHeaderInSection:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Class_Roster_01/ViewController.swift"
+            timestampString = "430106212.646652"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "prepareForSegue(_:sender:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Class_Roster_01.ViewController.prepareForSegue (Class_Roster_01.ViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIStoryboardSegue&gt;, sender : Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "Class_Roster_01"
+                  urlString = "file:///Users/zwalkingstick/Development/Education/Code_Fellows/Class_Roster_01/Class_Roster_01/ViewController.swift"
+                  timestampString = "430094259.519908"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "2558">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Class_Roster_01.ViewController.prepareForSegue (Class_Roster_01.ViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIStoryboardSegue&gt;, sender : Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "Class_Roster_01"
+                  urlString = "file:///Users/zwalkingstick/Development/Education/Code_Fellows/Class_Roster_01/Class_Roster_01/ViewController.swift"
+                  timestampString = "430094259.520111"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "2600">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

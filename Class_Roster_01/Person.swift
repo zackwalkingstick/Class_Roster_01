@@ -16,26 +16,22 @@ class Person : NSObject{
     var profileImage : UIImage?
     
     init(firstName: String, lastName: String){
-    
         self.firstName = firstName
         self.lastName = lastName
-    
     }
+    
     
     func fullName () -> String{
-    
         return (self.firstName + " " + self.lastName)
-    
     }
     
-    class func loadPlist(fileName: String) -> Array<Person>{
     
+    class func loadPlist(fileName: String) -> Array<Person>{
         var listOfPeople = Array<Person>()
         let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "plist")
         let people = NSArray(contentsOfFile: path)
 
         for person in people {
-            
              if let person = person as? Dictionary<String, String>{
              let firstName = person["firstName"]
              let lastName = person["lastName"]

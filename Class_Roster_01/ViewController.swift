@@ -12,21 +12,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var studentsTableViewController: UITableView!
     @IBOutlet weak var addPerson: UIBarButtonItem!
-    
+    @IBAction func unwindToList(segue: UIStoryboardSegue) {
+        
+    }
     
     var classRoster = Person.loadPlist("Roster_Dictionary")
     var teachers = Person.loadPlist("Teachers_Dictionary")
     var studentAndTeachers = [String: AnyObject]()
     
     
-    func studentAndTeacherDictionary()
-    {
+    func studentAndTeacherDictionary(){
         self.studentAndTeachers["Teachers"] = self.teachers
         self.studentAndTeachers["Students"] = self.classRoster
     }
     
-    override func viewDidLoad()
-    {
+    
+    override func viewDidLoad(){
         super.viewDidLoad()
         self.studentsTableViewController.dataSource = self
         self.studentsTableViewController.delegate = self
@@ -34,15 +35,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
-    {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int{
         return self.studentAndTeachers.count
     }
     
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int)-> Int
-    {
+    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int)-> Int{
         if (section == 0){
             return self.classRoster.count}
         else{
@@ -60,8 +58,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
-    {
+    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!{
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
         if (indexPath.section == 0){
@@ -75,40 +72,35 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!)
-    {
-        println(indexPath.section)
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
+        
     }
     
     
-    override func viewWillAppear(animated: Bool)
-    {
+    override func viewWillAppear(animated: Bool){
         self.studentsTableViewController.reloadData()
     }
 
     
-    override func didReceiveMemoryWarning()
-    {
+    override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!)
-    {
-        if segue.identifier == "Show Person" {
-        
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!){
+        if segue.identifier == "Show Person"{
             var detailViewController = segue.destinationViewController as DetailViewController
-            
             var selectedIndexPath = self.studentsTableViewController.indexPathForSelectedRow()
-            
             var selectedPerson: AnyObject! = self.classRoster[selectedIndexPath.row]
-            
             detailViewController.person = selectedPerson as Person
             
         }
-        
+        if segue.identifier == "Add Person"{
+            
+        }
     }
+    
+    
 
 
 }
