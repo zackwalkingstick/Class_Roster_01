@@ -54,7 +54,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return "Students"
         }
         else{
-            return "Teachers"}
+            return "Teachers"
+        }
     }
     
     
@@ -67,7 +68,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         else{
             var teacherForRow : Person = teachers[indexPath.row] as Person
             cell.textLabel.text = teacherForRow.fullName()
-            }
+        }
         return cell
     }
     
